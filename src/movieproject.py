@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-movies = pd.read_csv("movies.csv")
+movies = pd.read_csv("data/movies.csv")
 movies["genres"] = movies["genres"].str.replace("|", " ") # data cleaning for tf-idf (genre vectorization). Since the vertical bar interferes with this process, we replace it with a blank space.
 movies["clean_titles"] = movies["title"].str[:-7].str.lower().str.strip()
 
